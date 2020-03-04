@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.pages {
+
+  min-height: 92.5vmin;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+h1 {
+  color: #fff !important;
+}
+h3 {
+  color: #fff !important;
+}
+
+.rozmaturzeni-logo {
+  height: 35vmin;
+  pointer-events: none;
+  padding-bottom: 80px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rozmaturzeni-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
