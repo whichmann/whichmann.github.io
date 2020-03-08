@@ -39,7 +39,10 @@ const NavBar = () => {
               Cennik
             </Nav.Link>
             <Nav.Link as={NavLink} to="kontakt">
-              kontakt
+              Kontakt
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="uslugi">
+              Usługi
             </Nav.Link>
             <Nav.Link
               href="https://www.facebook.com/Rozmaturzeni-1172005829635509/"
