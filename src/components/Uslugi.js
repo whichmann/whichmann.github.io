@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
     display: "inline"
   },
   rootlayout: {
-    flexGrow: 1 !important,
+    flexGrow: 1,
   },
   paper: {
     padding: theme.spacing(2),
