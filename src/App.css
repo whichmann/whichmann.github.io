@@ -5,21 +5,13 @@
 }
 
 .pages {
-
   min-height: 92.5vmin;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-h1 {
-  color: #fff !important;
-}
-h3 {
-  color: #fff !important;
+  color: #1a1a1a;
 }
 
 .rozmaturzeni-logo {
@@ -28,8 +20,17 @@ h3 {
   padding-bottom: 80px;
 }
 
+.rozmaturzeni-home * {
+  /* color: rgb(255, 255, 255) !important; */
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .rozmaturzeni-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+/* ciemny: #1a1a1a; jasny: f5f5f5 */
