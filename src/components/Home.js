@@ -4,9 +4,9 @@ import logo from "../media/logo_auqa.png";
 const Home = () => {
   return (
     <span className={"rozmaturzeni-home"}>
-      <img src={logo} className="rozmaturzeni-logo" alt="logo"></img>
+      <img src={logo} className={"rozmaturzeni-logo"} alt="logo"></img>
       <br />
-      <r />
+      <br />
       <h1>ROZMATURZENI</h1>
       <h3>ADAM PONIATOWSKI</h3>
       <br />

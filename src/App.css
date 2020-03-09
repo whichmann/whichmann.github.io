@@ -2,16 +2,25 @@
   text-align: center;
   background-repeat: no-repeat;
   background-position: center;
+  max-height: 90vh !important;
+}
+
+.paper-override {
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+     -moz-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #777;
 }
 
 .pages {
   min-height: 92.5vmin;
+  /* max-height: 92.5vmax; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #1a1a1a;
+  padding-top: 10px;
 }
 
 .rozmaturzeni-logo {
@@ -20,8 +29,13 @@
   padding-bottom: 80px;
 }
 
+.wide-container {
+  max-width:1500px !important;
+  padding-top: 10px;
+ }
+
 .rozmaturzeni-home * {
-  /* color: rgb(255, 255, 255) !important; */
+  color: #1a1a1a !important;
   text-align: center;
   background-repeat: no-repeat;
   background-position: center;
