@@ -33,6 +33,10 @@
   height: 65vmin;
   pointer-events: none;
 }
+.uslugi-photo {
+  height: 40vmin;
+  pointer-events: none;
+}
 
 .wide-container {
   max-width:1500px !important;
