@@ -1,5 +1,6 @@
+
 .App {
-  text-align: center;
+  text-align: center; 
   background-repeat: no-repeat;
   background-position: center;
   max-height: 90vh !important;
@@ -7,10 +8,9 @@
 
 .paper-override {
   -webkit-box-shadow: 0 10px 6px -6px #777;
-     -moz-box-shadow: 0 10px 6px -6px #777;
-          box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
 }
-
 .pages {
   min-height: 92.5vmin;
   /* max-height: 92.5vmax; */
@@ -24,15 +24,20 @@
 }
 
 .rozmaturzeni-logo {
-  height: 35vmin;
+  height: 45vmin;
   pointer-events: none;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
+}
+
+.calendar {
+  height: 65vmin;
+  pointer-events: none;
 }
 
 .wide-container {
   max-width:1500px !important;
   padding-top: 10px;
- }
+}
 
 .rozmaturzeni-home * {
   color: #1a1a1a !important;
