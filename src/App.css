@@ -21,12 +21,16 @@
   font-size: calc(10px + 2vmin);
   color: #1a1a1a;
   padding-top: 10px;
+  /* width: 92.5vmax; */
 }
 
 .rozmaturzeni-logo {
   height: 45vmin;
   pointer-events: none;
   padding-bottom: 40px;
+}
+.inside-paper {
+  padding: 45px 45px 45px 45px !important;
 }
 
 .calendar {
@@ -39,6 +43,7 @@
 }
 
 .wide-container {
+  width: 90vmax;
   max-width:1500px !important;
   padding-top: 10px;
 }
@@ -48,12 +53,6 @@
   text-align: center;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .rozmaturzeni-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 /* ciemny: #1a1a1a; jasny: f5f5f5 */
