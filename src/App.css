@@ -24,6 +24,10 @@
   /* width: 92.5vmax; */
 }
 
+.navigation {
+  font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
 .rozmaturzeni-logo {
   height: 45vmin;
   pointer-events: none;
@@ -31,6 +35,10 @@
 }
 .inside-paper {
   padding: 45px 45px 45px 45px !important;
+}
+
+.currency {
+  font-size:1rem !important;
 }
 
 .calendar {

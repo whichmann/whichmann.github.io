@@ -21,7 +21,7 @@ import {
 const NavBar = () => {
   return (
     <Router>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="light" expand="lg" className={"navigation"} collapseOnSelect>
         <Navbar.Brand href="/">ROZMATURZENI</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
