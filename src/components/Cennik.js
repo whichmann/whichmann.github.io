@@ -2,7 +2,6 @@ import React from "react";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import StarIcon from "@material-ui/icons/StarBorder";
 import Typography from "@material-ui/core/Typography";
@@ -20,7 +19,6 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(8, 0, 6)
   },
   cardHeader: {
-    // minHeight: 130,
     backgroundColor:
       theme.palette.type === "dark"
         ? theme.palette.grey[700]
@@ -52,10 +50,9 @@ const Cennik = () => {
 
   return (
     <>
-      <CssBaseline />
       <Container maxWidth="sm" className={classes.heroContent}>
         <Typography
-          component="h1"
+          component="h2"
           variant="h2"
           align="center"
           color="textPrimary"
@@ -115,6 +112,24 @@ const Cennik = () => {
           Szczegóły do ustalenia poprzez kontakt mailowy lub formularz
           <br />W zależności od kursu od 25 do 35 zł / 45 minut nauki
         </Typography>
+        <br />
+        <h1>Warunki współpracy</h1>
+        <div>
+          <ul>
+            <li>
+              przejrzyste oraz proste zasady zapisane w umowie - gwarancja
+              współpracy do ustalonego wspólnego terminu
+            </li>
+            <li>
+              zajęcia odbywają się w terminach ustalonych przez uczniówm,
+              jesteśmy dopasowani do zmieniających się planów
+            </li>
+            <li>
+              jedna płatność w miesiącu - w przypadku zajęć grupowych oraz
+              kursów w formie przelewu
+            </li>
+          </ul>
+        </div>
       </Container>
     </>
   );

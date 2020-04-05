@@ -1,7 +1,7 @@
 import React from "react";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -14,7 +14,6 @@ import avatar1 from "./../media/1.jpg";
 import avatar2 from "./../media/2.jpg";
 import avatar3 from "./../media/3.jpg";
 
-
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
@@ -25,27 +24,41 @@ const useStyles = makeStyles(theme => ({
     display: "inline"
   },
   rootlayout: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
+    textAlign: "center",
+    color: theme.palette.text.secondary
   },
+  large: {
+    width: theme.spacing(7),
+    height: theme.spacing(7),
+    marginRight: theme.spacing(1),
+    marginTop: theme.spacing(2)
+  }
 }));
+
+var topper = {
+  marginTop: "6vh"
+};
 
 const ONas = () => {
   const classes = useStyles();
 
   return (
-    <Container className={"wide-container"}>
+    <Container className={"wide-container"} style={topper}>
       <Row>
         <Col sm={4}>
           {" "}
           <List className={classes.root + " paper-override"}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar alt="Adam Poniatowski" src={avatar1} />
+                <Avatar
+                  alt="Adam Poniatowski"
+                  src={avatar1}
+                  className={classes.large}
+                />
               </ListItemAvatar>
               <ListItemText
                 primary="Adam Poniatowski"
@@ -57,19 +70,25 @@ const ONas = () => {
                       className={classes.inline}
                       color="textPrimary"
                     >
-                      założyciel, koordynator odpowiedzialny za matematykę
-                      oraz przygotowanie mentalne
-                        <br />
-                      <i>doświadczenie - 10 lat</i>
+                      założyciel, koordynator odpowiedzialny za matematykę oraz
+                      przygotowanie mentalne
+                      <br />
                     </Typography>
+                    {"Doświadczenie - 10 lat"}
                   </React.Fragment>
                 }
               />
             </ListItem>
-            <Divider variant="inset" component="li" />
+          </List>
+          <br />
+          <List className={classes.root + " paper-override"}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar alt="Ewa Bone" src={avatar2} />
+                <Avatar
+                  alt="Ewa Bone"
+                  src={avatar2}
+                  className={classes.large}
+                />
               </ListItemAvatar>
               <ListItemText
                 primary="Ewa Bone"
@@ -82,17 +101,23 @@ const ONas = () => {
                       color="textPrimary"
                     >
                       odpowiedzialna za przygotowanie mentalne
-                        <br />
-                      <i>doświadczenie - 13 lat</i>
+                      <br />
                     </Typography>
+                    {"Doświadczenie - 13 lat"}
                   </React.Fragment>
                 }
               />
             </ListItem>
-            <Divider variant="inset" component="li" />
+          </List>
+          <br />
+          <List className={classes.root + " paper-override"}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar alt="Paulina Kaletha" src={avatar3} />
+                <Avatar
+                  alt="Paulina Kaletha"
+                  src={avatar3}
+                  className={classes.large}
+                />
               </ListItemAvatar>
               <ListItemText
                 primary="Paulina Kaletha"
@@ -106,22 +131,26 @@ const ONas = () => {
                     >
                       specjalistka d/s pro mocji i reklamy odpowiedzialna za
                       język niemiecki
-                        <br />
-                      <i>doświadczenie - 3 lata</i>
+                      <br />
                     </Typography>
-                    {" — Do you have Paris recommendations? Have you ever…"}
+                    {"Doświadczenie - 3 lata"}
                   </React.Fragment>
                 }
               />
             </ListItem>
           </List>
+          <br />
         </Col>
         <Col sm={4}>
           {" "}
           <List className={classes.root + " paper-override"}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar alt="Adam Poniatowski" src={avatar1} />
+                <Avatar
+                  alt="Adam Poniatowski"
+                  src={avatar1}
+                  className={classes.large}
+                />
               </ListItemAvatar>
               <ListItemText
                 primary="Adam Poniatowski"
@@ -133,19 +162,26 @@ const ONas = () => {
                       className={classes.inline}
                       color="textPrimary"
                     >
-                      założyciel, koordynator odpowiedzialny za matematykę
-                      oraz przygotowanie mentalne
-                        <br />
+                      założyciel, koordynator odpowiedzialny za matematykę oraz
+                      przygotowanie mentalne
+                      <br />
                       <i>doświadczenie - 10 lat</i>
                     </Typography>
+                    {"Doświadczenie - 10 lat"}
                   </React.Fragment>
                 }
               />
             </ListItem>
-            <Divider variant="inset" component="li" />
+          </List>
+          <br />
+          <List className={classes.root + " paper-override"}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar alt="Ewa Bone" src={avatar2} />
+                <Avatar
+                  alt="Ewa Bone"
+                  src={avatar2}
+                  className={classes.large}
+                />
               </ListItemAvatar>
               <ListItemText
                 primary="Ewa Bone"
@@ -158,17 +194,23 @@ const ONas = () => {
                       color="textPrimary"
                     >
                       odpowiedzialna za przygotowanie mentalne
-                        <br />
-                      <i>doświadczenie - 13 lat</i>
+                      <br />
                     </Typography>
+                    {"Doświadczenie - 13 lat"}
                   </React.Fragment>
                 }
               />
             </ListItem>
-            <Divider variant="inset" component="li" />
+          </List>
+          <br />
+          <List className={classes.root + " paper-override"}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar alt="Paulina Kaletha" src={avatar3} />
+                <Avatar
+                  alt="Paulina Kaletha"
+                  src={avatar3}
+                  className={classes.large}
+                />
               </ListItemAvatar>
               <ListItemText
                 primary="Paulina Kaletha"
@@ -182,22 +224,26 @@ const ONas = () => {
                     >
                       specjalistka d/s pro mocji i reklamy odpowiedzialna za
                       język niemiecki
-                        <br />
-                      <i>doświadczenie - 3 lata</i>
+                      <br />
                     </Typography>
-                    {" — Do you have Paris recommendations? Have you ever…"}
+                    {"Doświadczenie - 3 lata"}
                   </React.Fragment>
                 }
               />
             </ListItem>
           </List>
+          <br />
         </Col>
         <Col sm={4}>
           {" "}
           <List className={classes.root + " paper-override"}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar alt="Adam Poniatowski" src={avatar1} />
+                <Avatar
+                  alt="Adam Poniatowski"
+                  src={avatar1}
+                  className={classes.large}
+                />
               </ListItemAvatar>
               <ListItemText
                 primary="Adam Poniatowski"
@@ -209,19 +255,25 @@ const ONas = () => {
                       className={classes.inline}
                       color="textPrimary"
                     >
-                      założyciel, koordynator odpowiedzialny za matematykę
-                      oraz przygotowanie mentalne
-                        <br />
-                      <i>doświadczenie - 10 lat</i>
+                      założyciel, koordynator odpowiedzialny za matematykę oraz
+                      przygotowanie mentalne
+                      <br />
                     </Typography>
+                    {"Doświadczenie - 10 lat"}
                   </React.Fragment>
                 }
               />
             </ListItem>
-            <Divider variant="inset" component="li" />
+          </List>
+          <br />
+          <List className={classes.root + " paper-override"}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar alt="Ewa Bone" src={avatar2} />
+                <Avatar
+                  alt="Ewa Bone"
+                  src={avatar2}
+                  className={classes.large}
+                />
               </ListItemAvatar>
               <ListItemText
                 primary="Ewa Bone"
@@ -234,17 +286,23 @@ const ONas = () => {
                       color="textPrimary"
                     >
                       odpowiedzialna za przygotowanie mentalne
-                        <br />
-                      <i>doświadczenie - 13 lat</i>
+                      <br />
                     </Typography>
+                    {"Doświadczenie - 13 lat"}
                   </React.Fragment>
                 }
               />
             </ListItem>
-            <Divider variant="inset" component="li" />
+          </List>
+          <br />
+          <List className={classes.root + " paper-override"}>
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
-                <Avatar alt="Paulina Kaletha" src={avatar3} />
+                <Avatar
+                  alt="Paulina Kaletha"
+                  src={avatar3}
+                  className={classes.large}
+                />
               </ListItemAvatar>
               <ListItemText
                 primary="Paulina Kaletha"
@@ -258,10 +316,9 @@ const ONas = () => {
                     >
                       specjalistka d/s pro mocji i reklamy odpowiedzialna za
                       język niemiecki
-                        <br />
-                      <i>doświadczenie - 3 lata</i>
+                      <br />
                     </Typography>
-                    {" — Do you have Paris recommendations? Have you ever…"}
+                    {"Doświadczenie - 3 lata"}
                   </React.Fragment>
                 }
               />
