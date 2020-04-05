@@ -3,7 +3,8 @@
   text-align: center; 
   background-repeat: no-repeat;
   background-position: center;
-  max-height: 90vh !important;
+  /* max-height: 90vh !important; */
+  height: 100vh !important;
 }
 
 .paper-override {
@@ -12,8 +13,6 @@
   box-shadow: 0 10px 6px -6px #777;
 }
 .pages {
-  min-height: 92.5vmin;
-  /* max-height: 92.5vmax; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,8 +23,22 @@
   /* width: 92.5vmax; */
 }
 
+.btn-outline-primary {
+  color: #fff !important;
+  background-color: rgba(87, 136, 221, 0.185) !important; 
+  /* background-color: cutom-color; */
+  border-color: rgb(37, 102, 212) !important;
+  color: rgb(37, 102, 212) !important;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+  /* border-color: cutom-cor; */
+}
+
 .navigation {
   font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
+.MuiBox-root-136 {
+  padding-left: 0px !important;
 }
 
 .rozmaturzeni-logo {

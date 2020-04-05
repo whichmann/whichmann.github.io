@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../media/logo_auqa.png";
+import logo from "../media/banner.png";
 
 const Home = () => {
   return (
