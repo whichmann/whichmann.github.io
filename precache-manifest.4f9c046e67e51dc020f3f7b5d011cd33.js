@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9c74a6dada421cdff0c2d05adb820df5",
+    "revision": "187b3d7dd08d2e51da9feb98bc906d21",
     "url": "/index.html"
   },
   {
-    "revision": "b2870fa05d153020a1b9",
-    "url": "/static/css/main.4718b7ce.chunk.css"
+    "revision": "0060f50bcd154d51c839",
+    "url": "/static/css/main.adb7cbfe.chunk.css"
   },
   {
     "revision": "d2e3de699c4c9782e704",
     "url": "/static/js/2.3cae7dbf.chunk.js"
   },
   {
-    "revision": "b2870fa05d153020a1b9",
-    "url": "/static/js/main.0a8aa3d0.chunk.js"
+    "revision": "0060f50bcd154d51c839",
+    "url": "/static/js/main.0f24ff8a.chunk.js"
   },
   {
     "revision": "2bde375618577b953c84",
@@ -36,12 +36,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/close-icon.eba2f30b.svg"
   },
   {
-    "revision": "ac9a469a785c4602195452b9954f5945",
-    "url": "/static/media/kursy.ac9a469a.jpg"
+    "revision": "a25dd662eb8f5749e1ac4d2d30d8a266",
+    "url": "/static/media/kontakt.a25dd662.jpg"
   },
   {
-    "revision": "f40ed5b1e791e9d2479ba8b5e67f2df8",
-    "url": "/static/media/map-image.f40ed5b1.png"
+    "revision": "ac9a469a785c4602195452b9954f5945",
+    "url": "/static/media/kursy.ac9a469a.jpg"
   },
   {
     "revision": "a32303fc4a2f01323b9346b33fbcd9a7",
