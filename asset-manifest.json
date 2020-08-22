@@ -1,27 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.8e92e179.chunk.css",
-    "main.js": "/static/js/main.5920b263.chunk.js",
-    "main.js.map": "/static/js/main.5920b263.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.1d8208d4.js",
-    "runtime~main.js.map": "/static/js/runtime~main.1d8208d4.js.map",
-    "static/js/2.14215fbc.chunk.js": "/static/js/2.14215fbc.chunk.js",
-    "static/js/2.14215fbc.chunk.js.map": "/static/js/2.14215fbc.chunk.js.map",
+    "main.css": "/static/css/main.a6eeb027.chunk.css",
+    "main.js": "/static/js/main.96cbf516.chunk.js",
+    "main.js.map": "/static/js/main.96cbf516.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.408e8034.js",
+    "runtime-main.js.map": "/static/js/runtime-main.408e8034.js.map",
+    "static/js/2.03e11c6e.chunk.js": "/static/js/2.03e11c6e.chunk.js",
+    "static/js/2.03e11c6e.chunk.js.map": "/static/js/2.03e11c6e.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.2e38b0b79d1dac76e33298a063d6eba5.js": "/precache-manifest.2e38b0b79d1dac76e33298a063d6eba5.js",
+    "precache-manifest.1fd2b9fb5760f1ec0c6f42b4781cf207.js": "/precache-manifest.1fd2b9fb5760f1ec0c6f42b4781cf207.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.8e92e179.chunk.css.map": "/static/css/main.8e92e179.chunk.css.map",
-    "static/media/ap-min.png": "/static/media/ap-min.60105c1e.png",
-    "static/media/ar-min.jpg": "/static/media/ar-min.8a57d2ec.jpg",
-    "static/media/rozmaturzeni.min.css": "/static/media/kontakt.4ce41e22.jpg",
-    "static/media/close-icon.svg": "/static/media/close-icon.eba2f30b.svg",
-    "static/media/eb-min.jpg": "/static/media/eb-min.1458ecab.jpg",
-    "static/media/kk-min.jpg": "/static/media/kk-min.be492718.jpg",
-    "static/media/kursy-min.jpg": "/static/media/kursy-min.f057eb85.jpg",
-    "static/media/map-min.jpg": "/static/media/map-min.865a2e13.jpg",
-    "static/media/mk-min.jpg": "/static/media/mk-min.405c294d.jpg",
-    "static/media/pk-min.jpg": "/static/media/pk-min.8429af09.jpg",
-    "static/media/tp-min.jpg": "/static/media/tp-min.ef8c6f8b.jpg",
-    "static/media/w-pigulce-min.jpg": "/static/media/w-pigulce-min.fcee030b.jpg"
-  }
+    "static/css/main.a6eeb027.chunk.css.map": "/static/css/main.a6eeb027.chunk.css.map",
+    "static/js/2.03e11c6e.chunk.js.LICENSE.txt": "/static/js/2.03e11c6e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.408e8034.js",
+    "static/js/2.03e11c6e.chunk.js",
+    "static/css/main.a6eeb027.chunk.css",
+    "static/js/main.96cbf516.chunk.js"
+  ]
 }
