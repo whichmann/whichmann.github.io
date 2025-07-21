@@ -1,0 +1,57 @@
+textarea {
+  border: 1.5px solid #000;
+  font-family: Chicago_12;
+  font-size: 18px;
+  padding-left: 5px;
+}
+textarea:focus {
+  outline: none !important;
+}
+.container {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.form-input {
+  margin-bottom: 5px;
+}
+.form-btn {
+  margin-top: 15px;
+}
+.post {
+  margin-bottom: 1rem;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 5px 5px;
+  padding: 0 5px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 5.5rem;
+}
+
+.post-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-family: inherit;
+  text-shadow: none;
+}
+.post-body {
+  margin-top: 0.3rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-family: Chicago_12;
+}
+.post-date {
+  font-size: 0.85em;
+  margin-top: 0.3rem;
+  margin-bottom: 0;
+  margin-top: auto;
+  align-self: flex-end;
+  font-family: Chicago_12;
+}
+.no-posts {
+  text-align: center;
+}
