@@ -1,0 +1,11 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Vanilla JS blog with json-server backend",
+  "scripts": {
+    "start:api": "json-server --watch db.json --port 3001"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.4"
+  }
+}
