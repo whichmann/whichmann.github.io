@@ -70,8 +70,8 @@ textarea:focus {
   width: 40px;
   font-family: Inconsolata, Menlo, Chicago, Geneva;
 }
-.delete-btn:active::after,
-.delete-btn:active::before {
+.delete-btn:hover::after,
+.delete-btn:hover::before {
   opacity: 1;
 }
 .delete-btn::after {
@@ -118,10 +118,35 @@ textarea:focus {
   }
   .delete-btn {
     border: none;
-  }
-  .delete-btn:hover::after,
-  .delete-btn:hover::before {
+    background: transparent;
+    width: 44px;
+    height: 44px;
+    top: 0.2rem;
+    right: -25px;
+    transform: none;
     opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .delete-btn::before,
+  .delete-btn::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 4px;
+    background: red;
+    border-radius: 2px;
+    top: 15%;
+    left: 15%;
+    opacity: 1;
+    transition: background 0.2s;
+  }
+  .delete-btn::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .delete-btn::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
   .post {
     border: none;
