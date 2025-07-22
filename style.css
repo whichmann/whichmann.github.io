@@ -51,6 +51,7 @@ textarea:focus {
   margin-top: auto;
   align-self: flex-end;
   font-family: Chicago_12;
+  color: darkgray;
 }
 .no-posts {
   text-align: center;
@@ -114,5 +115,15 @@ textarea:focus {
   }
   .main {
     margin: 0;
+  }
+  .delete-btn {
+    border: none;
+  }
+  .delete-btn:hover::after,
+  .delete-btn:hover::before {
+    opacity: 1;
+  }
+  .post {
+    border: none;
   }
 }
