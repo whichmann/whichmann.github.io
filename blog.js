@@ -6,24 +6,32 @@ class Blog {
   }
 
   async addPost(title, body) {
-    const post = { title, body, date: new Date().toLocaleString() };
+    const post = {
+      title,
+      body,
+      date: new Date().toLocaleString(),
+      id: crypto.randomUUID(),
+    };
     try {
       const res = await fetch(this.apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(post),
       });
-      if (!res.ok) throw new Error("Server error");
+      console.log({ res });
+      if (!res.ok) {
+        throw new Error("Server error");
+      }
       const newPost = await res.json();
       this.posts.unshift(newPost);
       return newPost;
     } catch (err) {
+      console.log("not here");
       // Fallback to localStorage
       let localPosts = JSON.parse(
         localStorage.getItem(this.localStorageKey) || "[]"
       );
       // Simulate an id
-      post.id = Date.now();
       localPosts.unshift(post);
       localStorage.setItem(this.localStorageKey, JSON.stringify(localPosts));
       this.posts = localPosts;
@@ -47,6 +55,25 @@ class Blog {
       this.posts = localPosts;
       this.posts.sort((a, b) => new Date(b.date) - new Date(a.date));
       return this.posts;
+    }
+  }
+
+  async deletePost(id) {
+    try {
+      const res = await fetch(`${this.apiUrl}/${id}`, { method: "DELETE" });
+      if (!res.ok) throw new Error("Server error");
+      // Remove from local posts array
+      this.posts = this.posts.filter((post) => post.id !== id);
+      return true;
+    } catch (err) {
+      // Fallback to localStorage
+      let localPosts = JSON.parse(
+        localStorage.getItem(this.localStorageKey) || "[]"
+      );
+      localPosts = localPosts.filter((post) => post.id !== id);
+      localStorage.setItem(this.localStorageKey, JSON.stringify(localPosts));
+      this.posts = localPosts;
+      return true;
     }
   }
 }
@@ -88,7 +115,16 @@ class BlogUI {
         <div class="post-title">${post.title}</div>
         <div class="post-body">${post.body}</div>
         <div class="post-date">${post.date}</div>
+        <button aria-label="Close" data-id="${post.id}" class="close delete-btn"></button>
       `;
+      // Add event listener to the delete button
+      postDiv
+        .querySelector(".delete-btn")
+        .addEventListener("click", async (e) => {
+          const id = e.target.getAttribute("data-id");
+          await this.blog.deletePost(id);
+          this.renderPosts();
+        });
       this.postsDiv.appendChild(postDiv);
     });
   }
