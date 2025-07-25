@@ -1,3 +1,6 @@
+body {
+  font-family: Chicago_12 !important;
+}
 textarea {
   border: 1.5px solid #000;
   font-family: Chicago_12;
@@ -33,16 +36,18 @@ textarea:focus {
 }
 
 .post-title {
+  font-family: Chicago_12 !important;
   font-weight: bold;
   font-size: 1.1rem;
   font-family: inherit;
   text-shadow: none;
 }
 .post-body {
-  margin-top: 0.3rem;
+  margin-top: 12px;
   font-family: inherit;
   font-size: 1rem;
-  font-family: Chicago_12;
+  font-family: Chicago_12 !important;
+  white-space: pre-line;
 }
 .post-date {
   font-size: 0.85em;
@@ -50,61 +55,41 @@ textarea:focus {
   margin-bottom: 0;
   margin-top: auto;
   align-self: flex-end;
-  font-family: Chicago_12;
+  font-family: Chicago_12 !important;
   color: darkgray;
 }
 .no-posts {
   text-align: center;
 }
-.delete-btn {
-  background-color: #fff;
-  border: 4px solid #000;
+.post-controls {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.3rem;
+  display: flex;
+  gap: 0.3rem;
+  z-index: 2;
+}
+.post-control {
+  position: static;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
   cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.post-control img {
+  width: 100%;
+  height: 100%;
   display: block;
-  height: 40px;
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  z-index: 1;
-  transform: scale(0.5);
-  width: 40px;
-  font-family: Inconsolata, Menlo, Chicago, Geneva;
 }
-.delete-btn:hover::after,
-.delete-btn:hover::before {
-  opacity: 1;
-}
-.delete-btn::after {
-  background: linear-gradient(#000, #000) 0, linear-gradient(#000, #000) 100%,
-    linear-gradient(#000, #000) top, linear-gradient(#000, #000) bottom;
-  background-repeat: repeat, repeat, repeat, repeat;
-  background-size: auto, auto, auto, auto;
-  background-repeat: no-repeat;
-  background-size: 22.5% 3.6363636364px, 22.5% 3.6363636364px,
-    3.6363636364px 22.5%, 3.6363636364px 22.5%;
-  transform: rotate(45deg) scale(1.1);
-  bottom: 0;
-  content: "";
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-.delete-btn::before {
-  bottom: 0;
-  content: "";
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  background: linear-gradient(#000, #000) 0, linear-gradient(#000, #000) 100%,
-    linear-gradient(#000, #000) top, linear-gradient(#000, #000) bottom;
-  background-repeat: repeat, repeat, repeat, repeat;
-  background-size: auto, auto, auto, auto;
-  background-repeat: no-repeat;
-  background-size: 30% 4px, 30% 4px, 4px 30%, 4px 30%;
+
+.edit-btn {
+  /* display: none; */
 }
 
 @media (max-width: 600px) {
@@ -115,38 +100,6 @@ textarea:focus {
   }
   .main {
     margin: 0;
-  }
-  .delete-btn {
-    border: none;
-    background: transparent;
-    width: 44px;
-    height: 44px;
-    top: 0.2rem;
-    right: -25px;
-    transform: none;
-    opacity: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .delete-btn::before,
-  .delete-btn::after {
-    content: "";
-    position: absolute;
-    width: 18px;
-    height: 4px;
-    background: red;
-    border-radius: 2px;
-    top: 15%;
-    left: 15%;
-    opacity: 1;
-    transition: background 0.2s;
-  }
-  .delete-btn::before {
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-  .delete-btn::after {
-    transform: translate(-50%, -50%) rotate(-45deg);
   }
   .post {
     border: none;

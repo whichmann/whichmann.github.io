@@ -66,6 +66,7 @@ class Blog {
       this.posts = this.posts.filter((post) => post.id !== id);
       return true;
     } catch (err) {
+      console.log({ err });
       // Fallback to localStorage
       let localPosts = JSON.parse(
         localStorage.getItem(this.localStorageKey) || "[]"
@@ -103,25 +104,30 @@ class BlogUI {
 
   async renderPosts() {
     const posts = await this.blog.getPosts();
+    console.log({ posts });
     this.postsDiv.innerHTML = "";
     if (posts.length === 0) {
       this.postsDiv.innerHTML = "<p class='no-posts'>No posts yet.</p>";
       return;
     }
     posts.forEach((post) => {
+      console.log({ bod: post.body });
       const postDiv = document.createElement("div");
       postDiv.className = "post alert-box outer-border scale-down";
       postDiv.innerHTML = `
         <div class="post-title">${post.title}</div>
         <div class="post-body">${post.body}</div>
         <div class="post-date">${post.date}</div>
-        <button aria-label="Close" data-id="${post.id}" class="close delete-btn"></button>
+        <div class="post-controls">
+        <button data-id="${post.id}" class="post-control delete-btn"><img height="auto" src="icons/delete.svg" alt="Delete" /></button>
+        <button class="post-control edit-btn"><img height="auto" src="icons/edit.svg" alt="Edit" /></button>
+        </div>
       `;
       // Add event listener to the delete button
       postDiv
         .querySelector(".delete-btn")
         .addEventListener("click", async (e) => {
-          const id = e.target.getAttribute("data-id");
+          const id = e.currentTarget.getAttribute("data-id");
           await this.blog.deletePost(id);
           this.renderPosts();
         });
