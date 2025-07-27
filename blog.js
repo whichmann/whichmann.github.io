@@ -1,6 +1,6 @@
 class Blog {
   constructor() {
-    this.apiUrl = "https://spaceblog-ws.onrender.com/api/posts";
+    this.apiUrl = "http://localhost:3001/posts";
     this.posts = [];
     this.localStorageKey = "posts";
   }
@@ -9,13 +9,16 @@ class Blog {
     const post = {
       title,
       body,
+      date: new Date().toLocaleString(),
+      id: crypto.randomUUID(),
     };
     try {
       const res = await fetch(this.apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title, body }),
+        body: JSON.stringify(post),
       });
+      console.log({ res });
       if (!res.ok) {
         throw new Error("Server error");
       }
@@ -42,7 +45,7 @@ class Blog {
       if (!res.ok) throw new Error("Server error");
       this.posts = await res.json();
       // Sort by date descending if needed
-      this.posts.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+      this.posts.sort((a, b) => new Date(b.date) - new Date(a.date));
       return this.posts;
     } catch (err) {
       // Fallback to localStorage
@@ -50,7 +53,7 @@ class Blog {
         localStorage.getItem(this.localStorageKey) || "[]"
       );
       this.posts = localPosts;
-      this.posts.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+      this.posts.sort((a, b) => new Date(b.date) - new Date(a.date));
       return this.posts;
     }
   }
@@ -114,7 +117,7 @@ class BlogUI {
       postDiv.innerHTML = `
         <div class="post-title">${post.title}</div>
         <div class="post-body">${post.body}</div>
-        <div class="post-date">${post.timestamp}</div>
+        <div class="post-date">${post.date}</div>
         <div class="post-controls">
         <button data-id="${post.id}" class="post-control delete-btn"><img height="auto" src="icons/delete.svg" alt="Delete" /></button>
         <button class="post-control edit-btn"><img height="auto" src="icons/edit.svg" alt="Edit" /></button>
