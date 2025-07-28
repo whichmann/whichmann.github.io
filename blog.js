@@ -1,6 +1,6 @@
 class Blog {
   constructor() {
-    this.apiUrl = "https://spaceblog-ws.onrender.com/api/posts";
+    this.apiUrl = "https://spaceblog-ws.onrender.com";
     this.posts = [];
     this.localStorageKey = "posts";
   }
@@ -11,7 +11,7 @@ class Blog {
       body,
     };
     try {
-      const res = await fetch(this.apiUrl, {
+      const res = await fetch(`${this.apiUrl}/api/post`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title, body }),
@@ -38,7 +38,8 @@ class Blog {
 
   async getPosts() {
     try {
-      const res = await fetch(this.apiUrl);
+      const res = await fetch(`${this.apiUrl}/api/posts`);
+      console.log({ res });
       if (!res.ok) throw new Error("Server error");
       this.posts = await res.json();
       // Sort by date descending if needed

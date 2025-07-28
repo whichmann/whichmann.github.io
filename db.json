@@ -1,3 +1,16 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "title": "Saturn ma wiele księżyców (274)",
+      "body": "Prawie 300.\n1. Największym z nich jest Tytan,\n2. Japet ma stronę jasną i ciemną,\n3. Hypierion jest gąbkowaty,\n4. Enkelades jest jakiś dziwny,\n5, Mimas wygląda jak gwiazda śmierci",
+      "date": "25/07/2025, 12:09:45",
+      "id": "ba88becc-8696-49c2-9a25-a059e3e93997"
+    },
+    {
+      "title": "db internal key",
+      "body": "postgresql://spaceblog_db_user:98H2wNmWc2Jo1AvxZZPOq5rVWsMr3fT5@dpg-d22c58p5pdvs738qd6l0-a/spaceblog_db",
+      "date": "26/07/2025, 14:06:06",
+      "id": "56f54727-c261-4f91-992c-3d15de2d7de2"
+    }
+  ]
 }
