@@ -1,6 +1,6 @@
 class Blog {
   constructor() {
-    this.apiUrl = "https://spaceblog-ws.onrender.com";
+    this.apiUrl = "https://spaceblogs.onrender.com";
     this.posts = [];
     this.localStorageKey = "posts";
   }
@@ -13,7 +13,7 @@ class Blog {
       id: crypto.randomUUID(),
     };
     try {
-      const res = await fetch(`${this.apiUrl}/api/post`, {
+      const res = await fetch(`${this.apiUrl}/add-post`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(post),
@@ -41,12 +41,12 @@ class Blog {
 
   async getPosts() {
     try {
-      const res = await fetch(`${this.apiUrl}/api/posts`);
+      const res = await fetch(`${this.apiUrl}`);
       console.log({ res });
       if (!res.ok) throw new Error("Server error");
       this.posts = await res.json();
       // Sort by date descending if needed
-      this.posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+      this.posts.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
       return this.posts;
     } catch (err) {
       // Fallback to localStorage
@@ -61,7 +61,7 @@ class Blog {
 
   async deletePost(id) {
     try {
-      const res = await fetch(`${this.apiUrl}/${id}`, { method: "DELETE" });
+      const res = await fetch(`${this.apiUrl}/delete-post/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error("Server error");
       // Remove from local posts array
       this.posts = this.posts.filter((post) => post.id !== id);
@@ -111,16 +111,21 @@ class BlogUI {
       this.postsDiv.innerHTML = "<p class='no-posts'>No posts yet.</p>";
       return;
     }
-    posts.forEach((post) => {
+    posts.data.forEach((post) => {
       console.log({ bod: post.body });
       const postDiv = document.createElement("div");
+      const date = new Intl.DateTimeFormat("en", {
+        dateStyle: "full",
+        timeStyle: "long",
+        timeZone: "Poland",
+      }).format(new Date(post.createdAt))
       postDiv.className = "post alert-box outer-border scale-down";
       postDiv.innerHTML = `
         <div class="post-title">${post.title}</div>
         <div class="post-body">${post.body}</div>
-        <div class="post-date">${post.date}</div>
+        <div class="post-date">${date}</div>
         <div class="post-controls">
-        <button data-id="${post.id}" class="post-control delete-btn"><img height="auto" src="icons/delete.svg" alt="Delete" /></button>
+        <button data-id="${post._id}" class="post-control delete-btn"><img height="auto" src="icons/delete.svg" alt="Delete" /></button>
         <button class="post-control edit-btn"><img height="auto" src="icons/edit.svg" alt="Edit" /></button>
         </div>
       `;
