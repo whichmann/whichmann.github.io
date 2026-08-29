@@ -3,6 +3,7 @@ const loadGame = async () => {
   try {
     await import('gameMfe/Game');
     const game = document.createElement('game-tetris');
+
     document.getElementById('game').appendChild(game);
   } catch (error) {
     console.error('Error loading game:', error);

@@ -29,6 +29,10 @@ export default {
                 use: 'ts-loader',
                 exclude: /node_modules/,
             },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
         ],
     },
 
@@ -42,14 +46,7 @@ export default {
                 './Game': './src/game/game-element.tsx',
             },
 
-            shared: {
-                react: {
-                    singleton: true,
-                },
-                'react-dom': {
-                    singleton: true,
-                },
-            },
+            shared: {},
         }),
 
         new HtmlWebpackPlugin({

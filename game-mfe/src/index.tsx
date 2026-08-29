@@ -1,9 +1,9 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import Game from './game/Game';
+import './game/game-element';
+
+const game = document.createElement('game-tetris');
 
 const root = document.getElementById('root');
 
 if (root) {
-  createRoot(root).render(<Game />);
+  root.appendChild(game);
 }
