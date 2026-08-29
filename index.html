@@ -1,43 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SpaceBlog</title>
-    <link
-      rel="preload"
-      href="https://unpkg.com/@sakun/system.css"
-      as="style"
-      onload="this.rel='stylesheet'"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="window main">
-      <div class="title-bar">
-        <h1 class="title">My Blog</h1>
-      </div>
-      <form id="postForm">
-        <div class="standard-dialog center scale-down container">
-          <input
-            class="form-input"
-            type="text"
-            id="title"
-            placeholder="Title"
-            maxlength="32"
-            required
-          />
-          <textarea
-            class="form-input"
-            id="body"
-            placeholder="Write your post here..."
-            required
-          ></textarea>
-          <button class="btn form-btn" type="submit">Add Post</button>
-        </div>
-      </form>
-      <div id="posts"></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpaceBlog</title>
+  <link rel="preload" href="https://unpkg.com/@sakun/system.css" as="style" onload="this.rel='stylesheet'" />
+</head>
+
+<body>
+  <div class="window main">
+    <div class="title-bar">
+      <h1 class="title">My Blog</h1>
+      <div style="z-index: 10;" id="game"></div>
     </div>
-    <script src="blog.js"></script>
-  </body>
+    <form id="postForm">
+      <div class="standard-dialog center scale-down container">
+        <input class="form-input" type="text" id="title" placeholder="Title" maxlength="32" required />
+        <textarea class="form-input" id="body" placeholder="Write your post here..." required></textarea>
+        <button class="btn form-btn" type="submit">Add Post</button>
+      </div>
+    </form>
+    <div id="posts"></div>
+  </div>
+</body>
+
 </html>

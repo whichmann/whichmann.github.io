@@ -154,8 +154,11 @@ textarea:focus {
   transform: translate(-4px, -3px);
 }
 
-.edit-btn {
-  /* display: none; */
+.game {
+  position: fixed;
+  top: 60px;
+  right: 80px;
+  border: 1px solid black;
 }
 
 @media (max-width: 600px) {

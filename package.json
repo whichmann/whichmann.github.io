@@ -1,11 +1,24 @@
 {
   "name": "blog",
   "version": "1.0.0",
+  "type": "module",
   "description": "Vanilla JS blog with json-server backend",
   "scripts": {
-    "start:api": "json-server --watch db.json --port 3001"
+    "start:api": "json-server --watch db.json --port 3001",
+    "build": "webpack",
+    "dev": "webpack serve"
   },
   "devDependencies": {
-    "json-server": "^0.17.4"
+    "copy-webpack-plugin": "^14.0.0",
+    "css-loader": "^7.1.5",
+    "html-webpack-plugin": "^5.6.8",
+    "json-server": "^0.17.4",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.110.1",
+    "webpack-cli": "^7.2.3",
+    "webpack-dev-server": "^6.0.0"
+  },
+  "dependencies": {
+    "@module-federation/enhanced": "^2.9.0"
   }
 }

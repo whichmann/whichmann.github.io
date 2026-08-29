@@ -1,0 +1,10 @@
+{
+  "latestErrorEvent": {
+    "code": "TYPE-001",
+    "message": "Failed to generate type declaration. Execute the below cmd to reproduce and fix the error. #TYPE-001\nargs: {\"cmd\":\"\\\"C:\\\\\\\\Program Files\\\\\\\\nodejs\\\\\\\\node.exe\\\" C:\\\\Users\\\\dev\\\\Documents\\\\whichmann.github.io\\\\whichmann.github.io\\\\game-mfe\\\\node_modules\\\\.pnpm\\\\typescript@5.7.3\\\\node_modules\\\\typescript\\\\bin\\\\tsc --project C:\\\\Users\\\\dev\\\\Documents\\\\whichmann.github.io\\\\whichmann.github.io\\\\game-mfe\\\\node_modules\\\\.federation\\\\tsconfig.14433df55d746c12e9f89678f322ede0.json\"}\nView the docs to see how to solve: https://module-federation.io/guide/troubleshooting/type#type-001",
+    "args": {
+      "cmd": "\"C:\\\\Program Files\\\\nodejs\\\\node.exe\" C:\\Users\\dev\\Documents\\whichmann.github.io\\whichmann.github.io\\game-mfe\\node_modules\\.pnpm\\typescript@5.7.3\\node_modules\\typescript\\bin\\tsc --project C:\\Users\\dev\\Documents\\whichmann.github.io\\whichmann.github.io\\game-mfe\\node_modules\\.federation\\tsconfig.14433df55d746c12e9f89678f322ede0.json"
+    },
+    "timestamp": 1788032089548
+  }
+}

@@ -1,3 +1,17 @@
+import './style.css';
+const loadGame = async () => {
+  try {
+    await import('gameMfe/Game');
+    const game = document.createElement('game-tetris');
+
+    document.getElementById('game').appendChild(game);
+  } catch (error) {
+    console.error('Error loading game:', error);
+  }
+};
+
+
+
 class Blog {
   constructor() {
     this.posts = [];
@@ -62,6 +76,7 @@ class BlogUI {
     this.editingPostId = null;
     this.form.addEventListener("submit", (e) => this.handleSubmit(e));
     this.renderPosts();
+    loadGame();
   }
 
   escapeHtml(value) {
@@ -94,10 +109,10 @@ class BlogUI {
     return `
       <div class="post-controls">
         <button data-id="${post.id}" class="post-control delete-btn" title="Delete post" aria-label="Delete post">
-          <img height="auto" src="icons/delete.svg" alt="Delete" />
+          <img height="auto" src="/icons/delete.svg" alt="Delete" />
         </button>
         <button data-id="${post.id}" class="post-control edit-btn" title="Edit post" aria-label="Edit post">
-          <img height="auto" src="icons/edit.svg" alt="Edit" />
+          <img height="auto" src="/icons/edit.svg" alt="Edit" />
         </button>
       </div>
     `;
