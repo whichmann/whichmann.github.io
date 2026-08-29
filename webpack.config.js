@@ -48,7 +48,9 @@ export default {
             name: 'host',
 
             remotes: {
-                gameMfe: 'gameMfe@http://localhost:3002/remoteEntry.js',
+                gameMfe: {
+                    external: 'gameMfe@http://localhost:3002/remoteEntry.js',
+                },
             },
         }),
 

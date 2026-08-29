@@ -1,9 +1,15 @@
 import './style.css';
-import 'gameMfe/Game';
+const loadGame = async () => {
+  try {
+    await import('gameMfe/Game');
+    const game = document.createElement('game-tetris');
+    document.getElementById('game').appendChild(game);
+  } catch (error) {
+    console.error('Error loading game:', error);
+  }
+};
 
-const game = document.createElement('game-tetris');
 
-document.getElementById('game').appendChild(game);
 
 class Blog {
   constructor() {
@@ -69,6 +75,7 @@ class BlogUI {
     this.editingPostId = null;
     this.form.addEventListener("submit", (e) => this.handleSubmit(e));
     this.renderPosts();
+    loadGame();
   }
 
   escapeHtml(value) {
