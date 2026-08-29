@@ -1,6 +1,5 @@
 class Blog {
   constructor() {
-    this.apiUrl = "https://spaceblogs.onrender.com";
     this.posts = [];
     this.localStorageKey = "posts";
   }
@@ -9,75 +8,35 @@ class Blog {
     const post = {
       title,
       body,
-      date: new Date().toLocaleString(),
+      createdAt: new Date(),
       id: crypto.randomUUID(),
     };
-    try {
-      const res = await fetch(`${this.apiUrl}/add-post`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(post),
-      });
-      console.log({ res });
-      if (!res.ok) {
-        throw new Error("Server error");
-      }
-      const newPost = await res.json();
-      this.posts.unshift(newPost);
-      return newPost;
-    } catch (err) {
-      console.log("not here");
-      // Fallback to localStorage
-      let localPosts = JSON.parse(
-        localStorage.getItem(this.localStorageKey) || "[]"
-      );
-      // Simulate an id
-      localPosts.unshift(post);
-      localStorage.setItem(this.localStorageKey, JSON.stringify(localPosts));
-      this.posts = localPosts;
-      return post;
-    }
+    let localPosts = JSON.parse(
+      localStorage.getItem(this.localStorageKey) || "[]"
+    );
+    localPosts?.unshift(post);
+    localStorage.setItem(this.localStorageKey, JSON.stringify(localPosts));
+    this.posts = localPosts;
+    return post;
   }
 
   async getPosts() {
-    try {
-      const res = await fetch(`${this.apiUrl}`);
-      console.log({ res });
-      if (!res.ok) throw new Error("Server error");
-      this.posts = await res.json();
-      // Sort by date descending if needed
-      this.posts.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-      return this.posts;
-    } catch (err) {
-      // Fallback to localStorage
-      let localPosts = JSON.parse(
-        localStorage.getItem(this.localStorageKey) || "[]"
-      );
-      this.posts = localPosts;
-      this.posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-      return this.posts;
-    }
+    let localPosts = JSON.parse(
+      localStorage.getItem(this.localStorageKey) || "[]"
+    );
+    this.posts = localPosts;
+    this.posts?.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    return this.posts;
   }
 
   async deletePost(id) {
-    try {
-      const res = await fetch(`${this.apiUrl}/delete-post/${id}`, { method: "DELETE" });
-      if (!res.ok) throw new Error("Server error");
-      // Remove from local posts array
-      this.posts = this.posts.filter((post) => post.id !== id);
-      return true;
-    } catch (err) {
-      console.log({ err });
-      // Fallback to localStorage
-      let localPosts = JSON.parse(
-        localStorage.getItem(this.localStorageKey) || "[]"
-      );
-      localPosts = localPosts.filter((post) => post.id !== id);
-      localStorage.setItem(this.localStorageKey, JSON.stringify(localPosts));
-      this.posts = localPosts;
-      return true;
-    }
+    const localPosts = await this.getPosts();
+    const remainingPosts = localPosts.filter((post) => post.id !== id);
+    localStorage.setItem(this.localStorageKey, JSON.stringify(remainingPosts));
+    this.posts = remainingPosts;
+    return true;
   }
+
 }
 
 class BlogUI {
@@ -105,19 +64,17 @@ class BlogUI {
 
   async renderPosts() {
     const posts = await this.blog.getPosts();
-    console.log({ posts });
     this.postsDiv.innerHTML = "";
-    if (posts.length === 0) {
+    if (!posts || posts.length === 0) {
       this.postsDiv.innerHTML = "<p class='no-posts'>No posts yet.</p>";
       return;
     }
-    posts.data.forEach((post) => {
-      console.log({ bod: post.body });
+    posts.forEach((post) => {
       const postDiv = document.createElement("div");
       const date = new Intl.DateTimeFormat("en", {
         dateStyle: "full",
         timeStyle: "long",
-        timeZone: "Poland",
+        timeZone: "Europe/Warsaw",
       }).format(new Date(post.createdAt))
       postDiv.className = "post alert-box outer-border scale-down";
       postDiv.innerHTML = `
@@ -125,7 +82,7 @@ class BlogUI {
         <div class="post-body">${post.body}</div>
         <div class="post-date">${date}</div>
         <div class="post-controls">
-        <button data-id="${post._id}" class="post-control delete-btn"><img height="auto" src="icons/delete.svg" alt="Delete" /></button>
+        <button data-id="${post.id}" class="post-control delete-btn"><img height="auto" src="icons/delete.svg" alt="Delete" /></button>
         <button class="post-control edit-btn"><img height="auto" src="icons/edit.svg" alt="Edit" /></button>
         </div>
       `;
