@@ -146,10 +146,12 @@ textarea:focus {
 
 .confirm-edit-btn {
   color: #1d5f2f;
+  transform: translate(-4px, -3px);
 }
 
 .cancel-edit-btn {
   color: #8d2d2d;
+  transform: translate(-4px, -3px);
 }
 
 .edit-btn {
