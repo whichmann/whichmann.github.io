@@ -49,7 +49,7 @@ export default {
 
             remotes: {
                 gameMfe: {
-                    external: 'gameMfe@http://localhost:3002/remoteEntry.js',
+                    external: 'gameMfe@https://whichmann.github.io/game-mfe/remoteEntry.js',
                 },
             },
         }),
