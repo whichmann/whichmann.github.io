@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default {
-    mode: 'development',
+    mode: 'production',
 
     entry: './src/index.tsx',
 
@@ -45,8 +45,6 @@ export default {
             exposes: {
                 './Game': './src/game/game-element.tsx',
             },
-
-            shared: {},
         }),
 
         new HtmlWebpackPlugin({
