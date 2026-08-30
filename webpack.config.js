@@ -7,70 +7,78 @@ import { ModuleFederationPlugin } from '@module-federation/enhanced/webpack';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-export default {
-    mode: 'development',
+export default (env, argv) => {
+    const isProduction = argv.mode === 'production';
 
-    context: __dirname,
+    const gameMfeUrl = isProduction
+        ? 'https://whichmann.github.io/game-mfe/remoteEntry.js'
+        : 'http://localhost:3002/remoteEntry.js';
 
-    entry: './blog.js',
+    return ({
+        mode: 'development',
 
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
-        publicPath: 'auto',
-        clean: true,
-    },
+        context: __dirname,
 
-    resolve: {
-        extensions: ['.js'],
-    },
+        entry: './blog.js',
 
-    module: {
-        rules: [
-            {
-                test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
-            },
-        ],
-    },
+        output: {
+            path: path.resolve(__dirname, 'dist'),
+            filename: 'bundle.js',
+            publicPath: 'auto',
+            clean: true,
+        },
 
-    plugins: [
-        new CopyPlugin({
-            patterns: [
+        resolve: {
+            extensions: ['.js'],
+        },
+
+        module: {
+            rules: [
                 {
-                    from: 'icons',
-                    to: 'icons',
+                    test: /\.css$/i,
+                    use: ['style-loader', 'css-loader'],
                 },
             ],
-        }),
+        },
 
-        new ModuleFederationPlugin({
-            name: 'host',
+        plugins: [
+            new CopyPlugin({
+                patterns: [
+                    {
+                        from: 'icons',
+                        to: 'icons',
+                    },
+                ],
+            }),
 
-            remotes: {
-                gameMfe: {
-                    external: 'gameMfe@https://whichmann.github.io/game-mfe/remoteEntry.js',
+            new ModuleFederationPlugin({
+                name: 'host',
+
+                remotes: {
+                    gameMfe: {
+                        external: `gameMfe@${gameMfeUrl}`,
+                    },
                 },
+            }),
+
+            new HtmlWebpackPlugin({
+                template: './index.html',
+            }),
+        ],
+
+        devServer: {
+            host: 'localhost',
+            port: 3000,
+
+            static: {
+                directory: path.resolve(__dirname, 'dist'),
             },
-        }),
 
-        new HtmlWebpackPlugin({
-            template: './index.html',
-        }),
-    ],
+            allowedHosts: 'all',
 
-    devServer: {
-        host: 'localhost',
-        port: 3000,
-
-        static: {
-            directory: path.resolve(__dirname, 'dist'),
-        },
-
-        allowedHosts: 'all',
-
-        client: {
-            webSocketURL: 'ws://localhost:3000/ws',
-        },
-    },
-};
+            client: {
+                webSocketURL: 'ws://localhost:3000/ws',
+            },
+        }
+    })
+}
